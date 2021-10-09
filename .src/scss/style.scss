@@ -5,8 +5,8 @@
   max-width: 1500px;
   width: 100%;
   margin: 0 auto;
-  @include small-desktop-min{
-    //width: calc(100% - 160px);
+  @include medium-desktop {
+    max-width: calc(100% - 60px);
   }
 }
 .but{
@@ -43,6 +43,9 @@ nav{
       max-width: 600px;
       width: 100%;
       margin: 0 auto;
+      @include medium-desktop {
+        max-width: 400px;
+      }
       li{
         font-weight: normal;
         font-size: 20px;
@@ -62,6 +65,9 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include medium-desktop {
+    flex-direction: column;
+  }
   .txt{
     .title{
       font-style: normal;
@@ -99,6 +105,9 @@ nav{
     }
   }
   .images{
+    @include medium-desktop {
+      display: none;
+    }
     background-image: url("../img/back-img.svg");
   }
 }
@@ -125,11 +134,22 @@ nav{
 }
 .see-video{
   display: flex;
+  @include medium-desktop {
+    flex-direction: column;
+    align-items: center;
+  }
   img{
+    @include medium-desktop {
+      display: none;
+    }
     max-width: 900px;
     width: 100%;
   }
   .txt-see-video{
+    @include medium-desktop {
+      border-radius: 10px;
+      padding: 20px;
+    }
     padding: 100px 0 0;
     background: #CCF0E6;
     border-radius: 0 10px 10px 0;
@@ -164,7 +184,17 @@ nav{
 .our-project{
   display: flex;
   justify-content: space-between;
+  @include medium-desktop {
+    flex-direction: column;
+    align-items: center;
+  }
   .project{
+    &.reverse{
+      flex-direction: column-reverse;
+      @include medium-desktop{
+        flex-direction: column;
+      }
+    }
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -172,6 +202,7 @@ nav{
     width: 100%;
     img{
       padding: 30px 0 0;
+
     }
     .title-project{
       padding: 30px 0 0;
@@ -179,6 +210,7 @@ nav{
       font-size: 30px;
       line-height: 60px;
       color: #58A9A5;
+
     }
     .description-project{
       font-weight: 500;
@@ -194,5 +226,11 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include tablet-vert{
+      flex-direction: column;
+      img{
+        padding: 10px 0;
+      }
+    }
   }
 }
